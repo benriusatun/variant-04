@@ -1,0 +1,133 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  color: #202122;
+  background-color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Linux Libertine', Georgia, Times, serif;
+  font-size: 28px;
+  font-weight: normal;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+/* Стили для инфобокса (карточки справа) */
+.infobox {
+  float: right;              /* Прижимает таблицу вправо */
+  clear: right;              /* Запрещает другим плавающим элементам прилипать справа */
+  width: 300px;              /* Ширина карточки */
+  margin-left: 20px;         /* Отступ слева, чтобы текст не прилипал */
+  margin-bottom: 20px;       /* Отступ снизу */
+  border: 1px solid #a2a9b1; /* Серая рамка, как в Википедии */
+  background-color: #f8f9fa; /* Светло-серый фон */
+  border-collapse: collapse; /* Убирает двойные рамки между ячейками */
+  font-size: 13px;           /* Текст в карточке обычно мельче */
+  line-height: 1.4;
+}
+
+.infobox caption {
+  font-size: 16px;
+  padding: 10px;
+  background-color: #eaf3ff; /* Голубоватый фон заголовка карточки */
+  border-bottom: 1px solid #a2a9b1;
+}
+
+.infobox th {
+  padding: 5px;
+  border-top: 1px solid #a2a9b1;
+}
+
+.infobox td {
+  padding: 5px;
+  vertical-align: top;       /* Текст прижимается к верху ячеек */
+  border-top: 1px solid #eaecf0; /* Тонкие разделители строк */
+}
+
+/* Стили для обычных вики-таблиц */
+.wikitable {
+  background-color: #f8f9fa;
+  color: #202122;
+  margin: 1em 0;
+  border: 1px solid #a2a9b1;
+  border-collapse: collapse;
+}
+
+.wikitable th, 
+.wikitable td {
+  border: 1px solid #a2a9b1;
+  padding: 8px;
+}
+
+.wikitable th {
+  background-color: #eaecf0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.wikitable td {
+  text-align: left;
+}
+/* Стили для картинок внутри текста (миниатюры) */
+.thumb {
+  float: right;              /* По умолчанию прижимаем вправо */
+  clear: right;
+  margin: 0 0 15px 20px;     /* Отступы: снизу и слева */
+  border: 1px solid #c8ccd1;
+  background-color: #f8f9fa;
+  padding: 3px;
+  font-size: 13px;
+  line-height: 1.4;
+  width: 240px;              /* Ширина картинки вместе с рамкой */
+}
+
+.thumb img {
+  width: 100%;               /* Картинка занимает всю ширину блока */
+  display: block;
+}
+
+.thumb-caption {
+  padding: 5px 5px 0 5px;
+  color: #202122;
+}
+
+/* Если нужно прижать картинку влево */
+.thumb-left {
+  float: left;
+  margin: 0 20px 15px 0;
+}
+/* Стили для обычных вики-таблиц (обновленные) */
+.wikitable {
+  background-color: #f8f9fa;
+  color: #202122;
+  margin: 1em 0;
+  border: 1px solid #a2a9b1;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.wikitable th, 
+.wikitable td {
+  border: 1px solid #a2a9b1;
+  padding: 8px;
+  text-align: center; /* В Википедии текст в таких таблицах по центру */
+}
+
+.wikitable th {
+  background-color: #eaecf0;
+  font-weight: bold;
+}
+
+/* Первый столбец (названия характеристик) в Википедии обычно выровнен по левому краю */
+.wikitable td:first-child {
+  text-align: left;
+  background-color: #f8f9fa;
+}

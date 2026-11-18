@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заявка на книгу · V04</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Заявка на книгу</h1>
+
+  <form>
+    <p>
+      <label for="book-name">Название книги</label><br>
+      <input type="text" id="book-name" placeholder="Например, Тайна старого дома">
+    </p>
+
+    <p>
+      <label for="count">Количество экземпляров</label><br>
+      <input type="number" id="count" value="2">
+    </p>
+
+    <p>
+      <label for="wishes">Пожелания к выдаче</label><br>
+      <textarea id="wishes" rows="3" cols="30" placeholder="Опишите ваши пожелания"></textarea>
+    </p>
+
+    <p>
+      <label>
+        <input type="checkbox" checked> Нужна закладка
+      </label><br>
+      <label>
+        <input type="checkbox"> Нужен крупный шрифт
+      </label>
+    </p>
+
+    <p>
+      <label for="volume">Объём книги</label><br>
+      Короткая <input type="range" id="volume" min="1" max="5" value="2"> Большая
+    </p>
+
+    <p>
+      <a href="catalog.html">Назад</a> | 
+      <span style="color: #19324D;">Отправить</span>
+    </p>
+  </form>
+
+</body>
+</html>

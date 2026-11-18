@@ -1,0 +1,231 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  color: #19324D;
+  background-color: #EEF4FC;
+}
+
+/* ===== Шапка (синяя полоса во всю ширину) ===== */
+header {
+  background-color: #245A91;
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+}
+
+header > p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.25rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ===== Обертка для меню ===== */
+.menu-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 15px 20px 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+nav a {
+  display: block;
+  padding: 8px 14px;
+  color: #245A91;
+  background-color: #FFFFFF;
+  border: 1px solid #245A91;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #245A91;
+  color: #FFFFFF;
+}
+
+/* ===== Основное содержимое ===== */
+main.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px 32px;
+}
+
+h1,
+h2,
+a {
+  color: #245A91;
+}
+
+h1 {
+  font-size: 1.9rem;
+  margin: 8px 0 4px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+}
+
+a {
+  text-decoration: underline;
+}
+
+/* ===== Картинки ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+main > img {
+  display: block;
+  margin: 16px 0;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  max-width: 18rem;
+  margin: 12px 0;
+}
+
+/* ===== Карточки ===== */
+.card {
+  background-color: #FFFFFF;
+  border: 4px solid #245A91;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card .specs {
+  background-color: #245A91;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  font-weight: bold;
+  margin: 0 0 8px;
+  border-radius: 4px;
+}
+
+.card .description {
+  background-color: #FEF3C7;
+  color: #78350F;
+  padding: 0.5rem;
+  margin: 0 0 8px;
+  border-radius: 4px;
+}
+
+/* ===== Форма ===== */
+.request-form {
+  background-color: #FFFFFF;
+  border: 1px solid #94A3B8;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+fieldset {
+  border: 1px solid #d6e2f2;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin: 0 0 18px;
+}
+
+legend {
+  font-weight: 700;
+  color: #245A91;
+  padding: 0 6px;
+}
+
+.form-field {
+  margin: 0 0 1rem;
+}
+
+.form-field > label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: bold;
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea,
+.request-form button {
+  font: inherit;
+}
+
+.request-form select,
+.request-form input[type="number"],
+.request-form input[type="email"],
+.request-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #64748B;
+  border-radius: 0.35rem;
+}
+
+.request-form input[type="range"] {
+  width: 100%;
+}
+
+.request-form textarea {
+  resize: vertical;
+}
+
+small {
+  color: #5b7391;
+}
+
+.request-form button {
+  padding: 0.65rem 1rem;
+  border: 2px solid #245A91;
+  border-radius: 0.35rem;
+  background-color: #245A91;
+  color: #FFFFFF;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.request-form button:hover {
+  background-color: #19324D;
+  border-color: #19324D;
+}
+
+/* Красим чекбоксы и ползунок в цвет акцента */
+input[type="checkbox"],
+input[type="range"] {
+  accent-color: #245A91;
+}
+
+/* ===== Фокус ===== */
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid #C2410C;
+  outline-offset: 3px;
+}
+
+/* ===== Подвал ===== */
+footer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 16px 20px 32px;
+  color: #5b7391;
+  font-size: 0.9rem;
+  border-top: 1px solid #d6e2f2;
+}
