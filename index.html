@@ -23,6 +23,7 @@
 
   <main class="page">
     <h1>Книги для свободного вечера</h1>
+    <p>учебная версия</p>
     <p>Выберите автора по настроению</p>
     <img src="images/image.png" alt="Обложка книги" width="240">
     <p>Три предложения для выбора. </p>
@@ -36,4 +37,11 @@
     <p>Учебный прототип · Вариант 04</p>
   </footer>
 </body>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js").catch((error) => {
+      console.error("Не удалось зарегистрировать service worker:", error);
+    });
+  }
+</script>
 </html>
