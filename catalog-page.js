@@ -1,4 +1,3 @@
-
 const catalog = [
   {
     position: 1,
@@ -32,9 +31,10 @@ function filterByText(items, query) {
   return items.filter(item => item.name.toLowerCase().includes(normalized));
 }
 
-
 const catalogList = document.querySelector("#catalog-list");
 const statusText = document.querySelector("#status");
+const searchInput = document.querySelector("#search"); // Объявлено один раз
+const STORAGE_KEY = "catalog-search-v1"; // Ключ для сохранения
 
 function renderCatalog(items) {
   catalogList.replaceChildren();
@@ -60,10 +60,8 @@ function renderCatalog(items) {
     description.className = "description";
     description.textContent = item.description;
 
-    
     card.append(title, img, specs, description);
 
-   
     if (item.hasDetails) {
       const linkP = document.createElement("p");
       const link = document.createElement("a");
@@ -83,16 +81,7 @@ function renderCatalog(items) {
   }
 }
 
-renderCatalog(catalog);
-
-
-const searchInput = document.querySelector("#search");
-// --- НАЧАЛО ИЗМЕНЕНИЙ ---
-
-const searchInput = document.querySelector("#search");
-const STORAGE_KEY = "catalog-search-v1"; // Ключ для сохранения
-
-// 1. Функция, которая фильтрует и заодно сохраняет запрос
+// Функция, которая фильтрует и сохраняет запрос
 function updateCatalog() {
   const query = searchInput.value;
   // Сохраняем запрос в память браузера
@@ -103,18 +92,29 @@ function updateCatalog() {
   renderCatalog(found);
 }
 
-// 2. Слушаем ввод текста
+// Слушаем ввод текста
 searchInput.addEventListener("input", updateCatalog);
 
-// 3. При загрузке страницы проверяем, есть ли сохранённый запрос
-const savedQuery = localStorage.getItem(STORAGE_KEY);
-if (savedQuery) {
-  searchInput.value = savedQuery; // Подставляем текст в поле
-  const found = filterByText(catalog, savedQuery); // Фильтруем
-  renderCatalog(found); // Рисуем
-} else {
-  // Если запроса нет, показываем весь каталог
-  renderCatalog(catalog);
+// При загрузке страницы проверяем, есть ли сохранённый запрос
+function initCatalog() {
+  let savedQuery = null;
+  try {
+    savedQuery = localStorage.getItem(STORAGE_KEY);
+  } catch (e) {
+    console.warn("Не удалось прочитать сохранённый поиск", e);
+  }
+
+  if (savedQuery !== null && savedQuery !== "") {
+    // Если есть сохранённый запрос, подставляем его
+    searchInput.value = savedQuery;
+    const found = filterByText(catalog, savedQuery);
+    renderCatalog(found);
+  } else {
+    // Если нет, показываем весь каталог
+    searchInput.value = "";
+    renderCatalog(catalog);
+  }
 }
 
-// --- КОНЕЦ ИЗМЕНЕНИЙ ---
+// Запускаем инициализацию при загрузке
+initCatalog();
