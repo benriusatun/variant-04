@@ -246,7 +246,6 @@ footer {
   border-top: 1px solid #d6e2f2;
 }
 
-/* ===== Медиазапрос для узких экранов (Добавлено из задания 18) ===== */
 @media (max-width: 600px) {
   main.page {
     padding: 0.75rem;
