@@ -87,8 +87,34 @@ renderCatalog(catalog);
 
 
 const searchInput = document.querySelector("#search");
+// --- НАЧАЛО ИЗМЕНЕНИЙ ---
 
-searchInput.addEventListener("input", function () {
-  const found = filterByText(catalog, searchInput.value);
+const searchInput = document.querySelector("#search");
+const STORAGE_KEY = "catalog-search-v1"; // Ключ для сохранения
+
+// 1. Функция, которая фильтрует и заодно сохраняет запрос
+function updateCatalog() {
+  const query = searchInput.value;
+  // Сохраняем запрос в память браузера
+  localStorage.setItem(STORAGE_KEY, query);
+  
+  // Фильтруем и рисуем
+  const found = filterByText(catalog, query);
   renderCatalog(found);
-});
+}
+
+// 2. Слушаем ввод текста
+searchInput.addEventListener("input", updateCatalog);
+
+// 3. При загрузке страницы проверяем, есть ли сохранённый запрос
+const savedQuery = localStorage.getItem(STORAGE_KEY);
+if (savedQuery) {
+  searchInput.value = savedQuery; // Подставляем текст в поле
+  const found = filterByText(catalog, savedQuery); // Фильтруем
+  renderCatalog(found); // Рисуем
+} else {
+  // Если запроса нет, показываем весь каталог
+  renderCatalog(catalog);
+}
+
+// --- КОНЕЦ ИЗМЕНЕНИЙ ---
