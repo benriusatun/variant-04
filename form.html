@@ -33,7 +33,7 @@
             <option value="">— выберите книгу —</option>
             <option value="300">1984</option>
             <option value="350">Портрет Дориана Грея</option>
-            <option value="1200">Космические шахматы</option> 
+            <option value="1200">Космические шахматы</option> <!-- Изменено тут -->
           </select>
         </p>
         <p class="form-field">
@@ -41,3 +41,61 @@
           <input type="number" id="count" name="count" min="1" step="1" value="2" required>
         </p>
       </fieldset>
+<!-- ... остальной код формы не меняется ... -->
+
+      <fieldset>
+        <legend>Пожелания и удобство чтения</legend>
+        <p class="form-field">
+          <label for="wishes">Пожелания к выдаче</label>
+          <textarea id="wishes" name="wishes" rows="3" cols="30" placeholder="Опишите ваши пожелания"></textarea>
+        </p>
+        <p>
+          <input type="checkbox" id="bookmark" name="bookmark" checked>
+          <label for="bookmark">Нужна закладка</label>
+        </p>
+        <p>
+          <input type="checkbox" id="bigfont" name="bigfont">
+          <label for="bigfont">Нужен крупный шрифт</label>
+        </p>
+        <p class="form-field">
+          <label for="volume">Объём книги (от «Короткая» до «Большая»)</label>
+          Короткая <input type="range" id="volume" name="volume" min="1" max="5" value="2" aria-describedby="volume-help"> Большая
+          <br>
+          <small id="volume-help">1 — короткая, 5 — большая. Начальное значение — 2.</small>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Необязательно</legend>
+        <p class="form-field">
+          <label for="email">Учебная электронная почта (необязательно)</label>
+          <input type="email" id="email" name="email" placeholder="student@example.com">
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Оставить заявку</button>
+      </p>
+      
+      
+      <p id="result" role="status" aria-live="polite"></p>
+    </form>
+
+    <p><a href="index.html">Назад</a></p>
+  </main>
+
+  <footer>
+    <p>Учебный прототип · Вариант 04</p>
+  </footer>
+
+  
+  <script src="form.js" defer></script>
+</body>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js").catch((error) => {
+      console.error("Не удалось зарегистрировать service worker:", error);
+    });
+  }
+</script>
+</html>
