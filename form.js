@@ -29,11 +29,9 @@ if (form) {
     const quantityText = document.querySelector("#count").value;
     const select = document.querySelector("#book");
     const itemName = select.options[select.selectedIndex].text;
-    
-    // Берем цену прямо из выбранного пункта в HTML
+  
     const unitValue = Number(select.value); 
     
-    // Фиксированная доставка
     const extraValue = 100; 
 
     const message = getResult(quantityText, unitValue, extraValue);

@@ -9,10 +9,10 @@ body {
   margin: 0;
   color: #19324D;
   background-color: #EEF4FC;
-  overflow-wrap: anywhere; /* Добавлено из задания 18 для переноса длинных слов */
+  overflow-wrap: anywhere; 
 }
 
-/* ===== Шапка (синяя полоса во всю ширину) ===== */
+
 header {
   background-color: #245A91;
   color: #FFFFFF;
@@ -28,7 +28,7 @@ header > p {
   margin: 0 auto;
 }
 
-/* ===== Обертка для меню ===== */
+
 .menu-wrap {
   max-width: 860px;
   margin: 0 auto;
@@ -50,7 +50,7 @@ nav a {
   border: 1px solid #245A91;
   border-radius: 6px;
   text-decoration: none;
-  max-width: 100%; /* Добавлено из задания 18 */
+  max-width: 100%; 
 }
 
 nav a:hover {
@@ -58,7 +58,7 @@ nav a:hover {
   color: #FFFFFF;
 }
 
-/* ===== Основное содержимое ===== */
+
 main.page {
   max-width: 860px;
   margin: 0 auto;
@@ -104,7 +104,7 @@ main > img {
   margin: 12px 0;
 }
 
-/* ===== Карточки ===== */
+/* Карточки  */
 .card {
   background-color: #FFFFFF;
   border: 4px solid #245A91;
@@ -130,7 +130,7 @@ main > img {
   border-radius: 4px;
 }
 
-/* ===== Сетка для карточек (Добавлено из задания 18) ===== */
+
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -140,7 +140,7 @@ main > img {
 .products > .card {
   flex: 1 1 16rem;
   min-width: 0;
-  margin-bottom: 0; /* Убираем старый отступ, так как работает gap */
+  margin-bottom: 0; 
 }
 
 /* ===== Форма ===== */
@@ -189,8 +189,8 @@ legend {
   padding: 0.6rem;
   border: 1px solid #64748B;
   border-radius: 0.35rem;
-  min-width: 0; /* Добавлено из задания 18 */
-  max-width: 100%; /* Добавлено из задания 18 */
+  min-width: 0; 
+  max-width: 100%; 
 }
 
 .request-form input[type="range"] {
@@ -220,7 +220,7 @@ small {
   border-color: #19324D;
 }
 
-/* Красим чекбоксы и ползунок в цвет акцента */
+
 input[type="checkbox"],
 input[type="range"] {
   accent-color: #245A91;
@@ -251,6 +251,6 @@ footer {
     padding: 0.75rem;
   }
   .products > .card {
-    flex-basis: 100%; /* Заставляет карточки идти по одной */
+    flex-basis: 100%; 
   }
 }
