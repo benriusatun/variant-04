@@ -9,10 +9,10 @@ const catalog = [
   },
   {
     position: 2,
-    name: "Портрет Дориана Грея",
-    specs: "Классика · 210 страниц",
-    description: "Рассуждения о вечной молодости и красоте. Автор: Оскар Уайльд",
-    cover: "images/image5.jpg",
+    name: "Космические Шахматы",
+    specs: "Настольная игра · 1200 ₽",
+    description: "Стратегическая игра для любителей космоса.",
+    cover: "images/chedd.jpg",
     hasDetails: false
   },
   {
